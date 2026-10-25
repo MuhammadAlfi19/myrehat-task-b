@@ -25,6 +25,10 @@ beforeEach(() => {
 	vi.clearAllMocks();
 });
 
+beforeEach(() => {
+  process.env.OPENCODE_PASSWORD = "mock-opencode-password";
+});
+
 describe("AI Description Polish", () => {
 	it("rejects empty descriptions", () => {
 		expect(() => buildPolishPrompt("   ")).toThrow(
